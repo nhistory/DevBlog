@@ -4,8 +4,35 @@
   <url>
     <loc>https://nhistory.github.io/DevBlog/about/</loc>
   </url><url>
+    <loc>https://nhistory.github.io/DevBlog/tags/ajax/</loc>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/2021/09/07/ajax-and-fetch-api/</loc>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/tags/asynchronous/</loc>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/categories/asynchronous/</loc>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nhistory.github.io/DevBlog/categories/</loc>
-    <lastmod>2021-07-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/tags/fetch-api/</loc>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/categories/javascript/</loc>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/post/</loc>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/</loc>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/tags/</loc>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nhistory.github.io/DevBlog/categories/docker/</loc>
     <lastmod>2021-07-18T00:00:00+00:00</lastmod>
@@ -17,15 +44,6 @@
     <lastmod>2021-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nhistory.github.io/DevBlog/tags/docker-compose/</loc>
-    <lastmod>2021-07-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nhistory.github.io/DevBlog/post/</loc>
-    <lastmod>2021-07-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nhistory.github.io/DevBlog/</loc>
-    <lastmod>2021-07-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nhistory.github.io/DevBlog/tags/</loc>
     <lastmod>2021-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nhistory.github.io/DevBlog/categories/vs-code/</loc>
@@ -56,9 +74,6 @@
     <lastmod>2021-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nhistory.github.io/DevBlog/tags/javascript/</loc>
-    <lastmod>2021-06-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nhistory.github.io/DevBlog/categories/javascript/</loc>
     <lastmod>2021-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nhistory.github.io/DevBlog/2021/06/26/getelementbyid-vs-queryselector/</loc>

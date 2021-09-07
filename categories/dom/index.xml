@@ -14,6 +14,15 @@
 		<atom:link href="/DevBlog/categories/dom/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Ajax and Fetch API</title>
+			<link>https://nhistory.github.io/DevBlog/2021/09/07/ajax-and-fetch-api/</link>
+			<pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://nhistory.github.io/DevBlog/2021/09/07/ajax-and-fetch-api/</guid>
+			<description>&lt;h2 id=&#34;what-is-ajax&#34;&gt;What is Ajax?&lt;/h2&gt;
+&lt;p&gt;AJAX stands for Asynchronous JavaScript And XML. In a nutshell, it is the use of the XMLHttpRequest object to communicate with servers. It can send and receive information in various formats, including JSON, XML, HTML, and text files. AJAX’s most appealing characteristic is its &amp;ldquo;asynchronous&amp;rdquo; nature, which means it can communicate with the server, exchange data, and update the page without having to refresh the page.&lt;/p&gt;</description>
+		</item>
+      	
+		<item>
 			<title>Docker Image &amp; docker-compose</title>
 			<link>https://nhistory.github.io/DevBlog/2021/07/18/docker-image-docker-compose/</link>
 			<pubDate>Sun, 18 Jul 2021 00:00:00 +0000</pubDate>
