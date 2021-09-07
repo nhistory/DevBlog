@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+<title>Remote containers in VS code</title>
+
+
+  
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://nhistory.github.io/DevBlog/index.xml"
+  title="SeHwan Dev Blog"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Remote containers in VS code"/>
+<meta name="twitter:description" content="Remote containers in VS code"/>
+
+
+
+<link rel="stylesheet" href="https://nhistory.github.io/DevBlog/fontawesome/css/all.min.css" />
+
+<link
+  id="dark-mode-theme"
+  rel="stylesheet"
+  href="https://nhistory.github.io/DevBlog/css/dark.css"
+/>
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+<script src="https://nhistory.github.io/DevBlog/js/main.bundle.js"></script>
+<script src="https://nhistory.github.io/DevBlog/js/instantpage.min.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.84.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://nhistory.github.io/DevBlog/" class="nav-logo">
+        <img
+          src="https://nhistory.github.io/DevBlog/images/icon.png"
+          width="50"
+          height="50"
+          alt="Logo"
+        />
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/DevBlog/about/" id="About"
+              ><em class="fas fa-user fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/DevBlog/tags/" id="Tags"
+              ><em class="fas fa-tag fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/DevBlog/search/" id="Search"
+              ><em class="fas fa-search fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>
+              Remote containers in VS code
+            </h1>
+          
+          
+            <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Jul 10, 2021
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://nhistory.github.io/DevBlog/categories/docker/"
+        >Docker</a
+      >&nbsp;
+    
+      <a
+        href="https://nhistory.github.io/DevBlog/categories/vs-code/"
+        >VS Code</a
+      >&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>The <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote containers extention</a> can use a Docker container as a full-featured development environment. If you want to make a remote container setup in visual studio code, there are several mandatory settings.</p>
+<h1 id="keywords">Keywords</h1>
+<h2 id="container">container</h2>
+<p>컨테이너는 가상 머신과 마찬가지로 애플리케이션을 관련 라이브러리 및 종속 항목과 함께 패키지로 묶어 소프트웨어 서비스 구동을 위한 격리 환경을 마련해 줍니다. 컨테이너를 사용하면 개발자와 IT 운영팀이 훨씬 작은 단위로 업무를 수행할 수 있으므로 그에 따른 이점이 훨씬 많습니다.</p>
+<p><img src="https://nhistory.github.io/DevBlog/images/container01.png" alt="container01"></p>
+<ul>
+<li>
+<p>왜 컨테이너를 사용해야 하는가?</p>
+<p>가상 머신은 하드웨어 스택을 가상화합니다. 컨테이너는 이와 달리 운영체제 수준에서 가상화를 실시하여 다수의 컨테이너를 OS 커널에서 직접 구동합니다. 컨테이너는 훨씬 가볍고 OS 커널을 공유하며, 시작이 훨씬 빠르고 OS 전체 부팅보다 메모리를 훨씬 적게 차지합니다.</p>
+</li>
+</ul>
+<p><img src="https://nhistory.github.io/DevBlog/images/container02.png" alt="container02"></p>
+<ul>
+<li>
+<p>컨테이너를 사용하면 애플리케이션과 종속 항목을 버전 관리가 쉬운 하나의 패키지로 묶어 팀 내의 여러 개발자가 쉽게 복제하고 클러스터 내의 머신으로도 간편하게 복제되도록 만들 수 있습니다.</p>
+</li>
+<li>
+<p>소프트웨어 라이브러리로 개별 코드를 패키지로 묶어 사용자 인증 및 세션 관리 등의 로직을 추상화할 수 있듯이, 컨테이너로 애플리케이션 전체를 패키지로 묶어 운영체제와 머신, 코드 자체까지 추상화할 수 있습니다. 이를 서비스 기반 아키텍처와 결합하면 개발자들이 논리성을 판단해야 하는 단위 자체가 훨씬 작아지므로 민첩성과 생산성이 크게 향상됩니다. 그 결과 애플리케이션의 개발 및 테스트, 배포, 전반적인 관리가 훨씬 쉬워집니다.</p>
+</li>
+</ul>
+<p><a href="https://cloud.google.com/containers?hl=ko">컨테이너의 개념과 이점 | Google Cloud</a></p>
+<h2 id="docker">docker</h2>
+<p>도커는 컨테이너 기반의 오픈소스 가상화 플랫폼입니다.</p>
+<p><img src="https://nhistory.github.io/DevBlog/images/container03.png" alt="container03"></p>
+<p>도커에서 가장 중요한 개념은 컨테이너와 함께 이미지라는 개념입니다.</p>
+<ul>
+<li>
+<p>이미지는 <strong>컨테이너 실행에 필요한 파일과 설정값등을 포함하고 있는 것</strong>으로 상태값을 가지지 않고 변하지 않습니다(Immutable). 컨테이너는 이미지를 실행한 상태라고 볼 수 있고 추가되거나 변하는 값은 컨테이너에 저장됩니다. 같은 이미지에서 여러개의 컨테이너를 생성할 수 있고 컨테이너의 상태가 바뀌거나 컨테이너가 삭제되더라도 이미지는 변하지 않고 그대로 남아있습니다.</p>
+<p>말그대로 이미지는 컨테이너를 실행하기 위한 모든 정보를 가지고 있기 때문에 더 이상 의존성 파일을 컴파일하고 이것저것 설치할 필요가 없습니다. 이제 새로운 서버가 추가되면 미리 만들어 놓은 이미지를 다운받고 컨테이너를 생성만 하면 됩니다. 한 서버에 여러개의 컨테이너를 실행할 수 있고, 수십, 수백, 수천대의 서버도 문제없습니다.</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h2 id="vs-code에서-리모트-컨테이너-extension을-이용해서-개발하는-방법">VS code에서 리모트 컨테이너 extension을 이용해서 개발하는 방법</h2>
+<p>레퍼런스 문서</p>
+<p><a href="https://code.visualstudio.com/docs/remote/containers#_quick-start-open-an-existing-folder-in-a-container">Developing inside a Container using Visual Studio Code Remote Development</a></p>
+<ol>
+<li>Docker for mac 설치한다.</li>
+<li>VScode에서 extension으로 Remote-container, Docker를 설치한다.</li>
+<li>Command Palette에서 &lsquo;Open Folder in Container&rsquo;를 클릭한다.</li>
+<li>컨테이너로 실행시키고자 하는 폴더를 선택한다.</li>
+</ol>
+<ul>
+<li>Dockerfile example</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-docker" data-lang="docker"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> node:12</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /app</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> package*.json ./<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> npm install<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">8080</span>
+
+<span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8080</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [ <span style="color:#e6db74">&#34;npm&#34;</span>, <span style="color:#e6db74">&#34;start&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><ul>
+<li>
+<p>Docker compose</p>
+<p>도커는 복잡한 설정을 쉽게 관리하기 위해 YAML방식의 설정파일을 이용한 Docker Compose라는 툴을 제공합니다.</p>
+<p>Docker에서 제공하는 Compose Sample</p>
+<p><a href="https://github.com/docker/awesome-compose">docker/awesome-compose</a></p>
+<p>여러개의 도커 이미지들을 이용한 복잡한 세팅의 개발환경을 구축해야 할 때 docker-compose파일을 이용하면 손쉽게 세팅이 가능하다고 한다. 자세한 내용은 추후에 다른 포스팅에서 정리해 볼 예정이다.</p>
+</li>
+</ul>
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/remote-containers/"
+              >Remote containers</a
+            >&nbsp;
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/docker/"
+              >Docker</a
+            >&nbsp;
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/vs-code/"
+              >VS Code</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+
+    
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="https://twitter.com/SehwanDev" name="Twitter">
+        <em class="fab fa-twitter"></em>
+      </a>
+    
+       &nbsp;&ndash;&nbsp;
+      <a href="https://github.com/nhistory" name="GitHub">
+        <em class="fab fa-github"></em>
+      </a>
+    
+       &nbsp;&ndash;&nbsp;
+      <a href="https://www.instagram.com/sehwaann/" name="Instagram">
+        <em class="fab fa-instagram"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://nhistory.github.io/DevBlog/about">SeHwan Dev</a>
+      &nbsp;&copy;
+      2021
+      
+        &nbsp;/&nbsp;
+        <a href="https://nhistory.github.io/DevBlog/">SeHwan Dev Blog</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

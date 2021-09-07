@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+<title>Element.classList</title>
+
+
+  
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://nhistory.github.io/DevBlog/index.xml"
+  title="SeHwan Dev Blog"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Element.classList"/>
+<meta name="twitter:description" content="Element.classList"/>
+
+
+
+<link rel="stylesheet" href="https://nhistory.github.io/DevBlog/fontawesome/css/all.min.css" />
+
+<link
+  id="dark-mode-theme"
+  rel="stylesheet"
+  href="https://nhistory.github.io/DevBlog/css/dark.css"
+/>
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+<script src="https://nhistory.github.io/DevBlog/js/main.bundle.js"></script>
+<script src="https://nhistory.github.io/DevBlog/js/instantpage.min.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.84.0" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://nhistory.github.io/DevBlog/" class="nav-logo">
+        <img
+          src="https://nhistory.github.io/DevBlog/images/icon.png"
+          width="50"
+          height="50"
+          alt="Logo"
+        />
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/DevBlog/about/" id="About"
+              ><em class="fas fa-user fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/DevBlog/tags/" id="Tags"
+              ><em class="fas fa-tag fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/DevBlog/search/" id="Search"
+              ><em class="fas fa-search fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>
+              Element.classList
+            </h1>
+          
+          
+            <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Jun 28, 2021
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://nhistory.github.io/DevBlog/categories/javascript/"
+        >Javascript</a
+      >&nbsp;
+    
+      <a
+        href="https://nhistory.github.io/DevBlog/categories/dom/"
+        >DOM</a
+      >&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>The Element.classList is a read-only property that returns a live DOMTokenList collection of the class attributes of the element. This can then be used to manipulate the class list.</p>
+<p>Using classList is a convenient alternative to accessing an element&rsquo;s list of classes as a space-delimited string via element.className.</p>
+<h1 id="syntax">Syntax</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elementClasses</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">elementNodeReference</span>.<span style="color:#a6e22e">classList</span>;
+</code></pre></div><h1 id="example">Example</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">div</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;div&#34;</span>);
+<span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;foo&#34;</span>;
+
+<span style="color:#75715e">// our starting state: &lt;div class=&#34;foo&#34;&gt;&lt;/div&gt;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">outerHTML</span>);
+
+<span style="color:#75715e">// use the classList API to remove and add classes
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;foo&#34;</span>);
+<span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;anotherclass&#34;</span>);
+
+<span style="color:#75715e">// &lt;div class=&#34;anotherclass&#34;&gt;&lt;/div&gt;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">outerHTML</span>);
+
+<span style="color:#75715e">// if visible is set remove it, otherwise add it
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">toggle</span>(<span style="color:#e6db74">&#34;visible&#34;</span>);
+
+<span style="color:#75715e">// add/remove visible, depending on test conditional, i less than 10
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">toggle</span>(<span style="color:#e6db74">&#34;visible&#34;</span>, <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>);
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#34;foo&#34;</span>));
+
+<span style="color:#75715e">// add or remove multiple classes
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>, <span style="color:#e6db74">&#34;baz&#34;</span>);
+<span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>, <span style="color:#e6db74">&#34;baz&#34;</span>);
+
+<span style="color:#75715e">// add or remove multiple classes using spread syntax
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cls</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>];
+<span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(...<span style="color:#a6e22e">cls</span>);
+<span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(...<span style="color:#a6e22e">cls</span>);
+
+<span style="color:#75715e">// replace class &#34;foo&#34; with class &#34;bar&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">div</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>);
+</code></pre></div><p>When controlling HTML with Javascript, you must be aware of the division of roles with CSS. Since it is right to control the design part of the site screen with CSS, the correct way is to indirectly control CSS while changing the HTML tag ID or class name with Javascript when giving design interaction.</p>
+<blockquote>
+<p>Javascript 로 HTML을 컨트롤할 때 CSS와의 역할분담에 대해 인지하고 있어야 한다. 사이트 화면의 디자인 적인 부분은 CSS로 컨트롤 하는 것이 맞기 때문에 디자인 적인 인터렉션을 줄 때 Javascript로 HTML tag의 ID나 class name을 변경시켜주면서 간접적으로 CSS를 컨트롤해 주는 것이 올바른 방법이다.</p>
+</blockquote>
+<p>It is the properties of <code>classList</code> that are used in this situation.</p>
+<blockquote>
+<p>이러한 상황에서 사용하는 것이 바로 classList의 property들이다.</p>
+</blockquote>
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/dom/"
+              >DOM</a
+            >&nbsp;
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/javascript/"
+              >Javascript</a
+            >&nbsp;
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/html/"
+              >html</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+
+    
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="https://twitter.com/SehwanDev" name="Twitter">
+        <em class="fab fa-twitter"></em>
+      </a>
+    
+       &nbsp;&ndash;&nbsp;
+      <a href="https://github.com/nhistory" name="GitHub">
+        <em class="fab fa-github"></em>
+      </a>
+    
+       &nbsp;&ndash;&nbsp;
+      <a href="https://www.instagram.com/sehwaann/" name="Instagram">
+        <em class="fab fa-instagram"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://nhistory.github.io/DevBlog/about">SeHwan Dev</a>
+      &nbsp;&copy;
+      2021
+      
+        &nbsp;/&nbsp;
+        <a href="https://nhistory.github.io/DevBlog/">SeHwan Dev Blog</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

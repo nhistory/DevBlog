@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+<title>getElementById() vs querySelector()</title>
+
+
+  
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://nhistory.github.io/DevBlog/index.xml"
+  title="SeHwan Dev Blog"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="getElementById() vs querySelector()"/>
+<meta name="twitter:description" content="getElementById() vs querySelector()"/>
+
+
+
+<link rel="stylesheet" href="https://nhistory.github.io/DevBlog/fontawesome/css/all.min.css" />
+
+<link
+  id="dark-mode-theme"
+  rel="stylesheet"
+  href="https://nhistory.github.io/DevBlog/css/dark.css"
+/>
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+<script src="https://nhistory.github.io/DevBlog/js/main.bundle.js"></script>
+<script src="https://nhistory.github.io/DevBlog/js/instantpage.min.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.84.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://nhistory.github.io/DevBlog/" class="nav-logo">
+        <img
+          src="https://nhistory.github.io/DevBlog/images/icon.png"
+          width="50"
+          height="50"
+          alt="Logo"
+        />
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/DevBlog/about/" id="About"
+              ><em class="fas fa-user fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/DevBlog/tags/" id="Tags"
+              ><em class="fas fa-tag fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/DevBlog/search/" id="Search"
+              ><em class="fas fa-search fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>
+              getElementById() vs querySelector()
+            </h1>
+          
+          
+            <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Jun 26, 2021
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://nhistory.github.io/DevBlog/categories/javascript/"
+        >Javascript</a
+      >&nbsp;
+    
+      <a
+        href="https://nhistory.github.io/DevBlog/categories/dom/"
+        >DOM</a
+      >&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>When calling a specific element of an HTML file with Javascript, two methods are often used among document properties.</p>
+<blockquote>
+<p>Javascript로 HTML 파일의 특정 element를 호출할 때 document의 property 중 흔히 2가지 방법을 사용한다.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elementId</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;id&#34;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elementClass</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementByClassName</span>(<span style="color:#e6db74">&#34;class&#34;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elementTag</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;tag&#34;</span>);
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;selector&#34;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elementAll</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;selector&#34;</span>);
+</code></pre></div><p>If you use <code>getElementBy</code>, you must use a specific id and class name for each element. Therefore, it is fast, but if you find an element by tag name, it usually returns the result in an array, so it may be difficult to use a specific element.</p>
+<blockquote>
+<p>getElementBy 를 이용하면 각각의 element 마다 특정한 id, class 이름을 사용해야 한다. 그렇기 때문에 속도는 빠르지만, tag name으로 element를 찾으면 보통 array로 결과를 리턴하기 때문에 특정 요소를 사용하기 어려울 수 있다.</p>
+</blockquote>
+<p>Because <code>querySelector</code> uses CSS selector, you can specify the element exactly at the desired position. Instead, it can be slow because the selector becomes more complex.</p>
+<blockquote>
+<p>querySelector 는 CSS selector 를 사용하기 때문에 원하는 위치의 element를 정확히 지정할 수 있다. 대신 selector가 아무래도 복잡해지기 때문에 속도가 느려질 수 있다.</p>
+</blockquote>
+<hr>
+<p>Even if multiple elements are selected with <code>querySelector</code> at the same time, only the first element is returned. If you want to get all of them, you should use <code>querySelectorAll</code>.</p>
+<blockquote>
+<p>querySelector 로 여러개의 element를 동시에 선택해도 제일 첫 번째 element만 리턴한다. 여러개를 모두 가져오고 싶으면 querySelectorAll 을 사용해야 한다.</p>
+</blockquote>
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/dom/"
+              >DOM</a
+            >&nbsp;
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/javascript/"
+              >Javascript</a
+            >&nbsp;
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/html/"
+              >html</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+
+    
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="https://twitter.com/SehwanDev" name="Twitter">
+        <em class="fab fa-twitter"></em>
+      </a>
+    
+       &nbsp;&ndash;&nbsp;
+      <a href="https://github.com/nhistory" name="GitHub">
+        <em class="fab fa-github"></em>
+      </a>
+    
+       &nbsp;&ndash;&nbsp;
+      <a href="https://www.instagram.com/sehwaann/" name="Instagram">
+        <em class="fab fa-instagram"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://nhistory.github.io/DevBlog/about">SeHwan Dev</a>
+      &nbsp;&copy;
+      2021
+      
+        &nbsp;/&nbsp;
+        <a href="https://nhistory.github.io/DevBlog/">SeHwan Dev Blog</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
