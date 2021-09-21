@@ -4,6 +4,33 @@
   <url>
     <loc>https://nhistory.github.io/DevBlog/about/</loc>
   </url><url>
+    <loc>https://nhistory.github.io/DevBlog/categories/</loc>
+    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/tags/immutability/</loc>
+    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/2021/09/20/immutability-and-redux/</loc>
+    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/categories/javascript/</loc>
+    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/post/</loc>
+    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/tags/redux/</loc>
+    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/categories/redux/</loc>
+    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/</loc>
+    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/tags/</loc>
+    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nhistory.github.io/DevBlog/tags/ajax/</loc>
     <lastmod>2021-09-07T00:00:00+00:00</lastmod>
   </url><url>
@@ -16,22 +43,7 @@
     <loc>https://nhistory.github.io/DevBlog/categories/asynchronous/</loc>
     <lastmod>2021-09-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nhistory.github.io/DevBlog/categories/</loc>
-    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://nhistory.github.io/DevBlog/tags/fetch-api/</loc>
-    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nhistory.github.io/DevBlog/categories/javascript/</loc>
-    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nhistory.github.io/DevBlog/post/</loc>
-    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nhistory.github.io/DevBlog/</loc>
-    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nhistory.github.io/DevBlog/tags/</loc>
     <lastmod>2021-09-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nhistory.github.io/DevBlog/categories/docker/</loc>
