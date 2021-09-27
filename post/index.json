@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://nhistory.github.io/DevBlog/2021/09/27/binary-gap/",
+                "title": "Binary Gap",
+                "section": "post",
+                "date" : "2021.09.27",
+                "body": "A binary gap within a positive integer N is any maximal sequence of consecutive zeros that is surrounded by ones at both ends in the binary representation of N.\nIn order to make code of finding out the binary gap of integer \u0026lsquo;N\u0026rsquo;, first of all we need to exchange from integer N to binary representation.\nint to binary There are several methods to change int into binary by python. bin method is the most simple way, but we need to remove 0b from result. So I select to use format(N, 'b).\ndef solution(N): # int to binary bin_N = format(N,\u0026#39;b\u0026#39;) print (bin_N) solution(100) #1100100 find binary gap Binary gap is the number of consecutive zeros between ones. We need to get rid of leading and trailing zeros.\ndef solution(N): # int to binary bin_gap = format(N,\u0026#39;b\u0026#39;).strip(\u0026#39;0\u0026#39;) print (bin_gap) solution(100) #11001 Next step, I want to use split method, because we need maximum value of consecutive zeros.\ndef solution(N): # int to binary bin_gap = format(N,\u0026#39;b\u0026#39;).strip(\u0026#39;0\u0026#39;).split(\u0026#39;1\u0026#39;) print (bin_gap) solution(100) #[\u0026#39;\u0026#39;, \u0026#39;\u0026#39;, \u0026#39;00\u0026#39;, \u0026#39;\u0026#39;] Finally, we can make an output of binary gap using by max and len method.\ndef solution(N): # int to binary bin_gap = len(max(format(N,\u0026#39;b\u0026#39;).strip(\u0026#39;0\u0026#39;).split(\u0026#39;1\u0026#39;))) print (bin_gap) solution(100) #2 Reference https://app.codility.com/programmers/lessons/1-iterations/binary_gap/\n"
+            }
+        
+    ,
+        
+            {
                 "ref": "https://nhistory.github.io/DevBlog/2021/09/20/immutability-and-redux/",
                 "title": "Immutability and Redux",
                 "section": "post",

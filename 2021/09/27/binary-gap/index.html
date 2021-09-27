@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+<title>Binary Gap</title>
+
+
+  
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://nhistory.github.io/DevBlog/index.xml"
+  title="SeHwan Dev Blog"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Binary Gap"/>
+<meta name="twitter:description" content="Binary gap by python"/>
+
+
+
+<link rel="stylesheet" href="https://nhistory.github.io/DevBlog/fontawesome/css/all.min.css" />
+
+<link
+  id="dark-mode-theme"
+  rel="stylesheet"
+  href="https://nhistory.github.io/DevBlog/css/dark.css"
+/>
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+<script src="https://nhistory.github.io/DevBlog/js/main.bundle.js"></script>
+<script src="https://nhistory.github.io/DevBlog/js/instantpage.min.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.84.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://nhistory.github.io/DevBlog/" class="nav-logo">
+        <img
+          src="https://nhistory.github.io/DevBlog/images/icon.png"
+          width="50"
+          height="50"
+          alt="Logo"
+        />
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/DevBlog/about/" id="About"
+              ><em class="fas fa-user fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/DevBlog/tags/" id="Tags"
+              ><em class="fas fa-tag fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/DevBlog/search/" id="Search"
+              ><em class="fas fa-search fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>
+              Binary Gap
+            </h1>
+          
+          
+            <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Sep 27, 2021
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://nhistory.github.io/DevBlog/categories/coding-test/"
+        >coding test</a
+      >&nbsp;
+    
+      <a
+        href="https://nhistory.github.io/DevBlog/categories/python/"
+        >python</a
+      >&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>A binary gap within a positive integer N is any maximal sequence of consecutive zeros that is surrounded by ones at both ends in the binary representation of N.</p>
+<p>In order to make code of finding out the binary gap of integer &lsquo;N&rsquo;, first of all we need to exchange from integer N to binary representation.</p>
+<h2 id="int-to-binary">int to binary</h2>
+<p>There are several methods to change int into binary by python. <code>bin</code> method is the most simple way, but we need to remove <code>0b</code> from result. So I select to use <code>format(N, 'b)</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(N):
+    <span style="color:#75715e"># int to binary</span>
+    bin_N <span style="color:#f92672">=</span> format(N,<span style="color:#e6db74">&#39;b&#39;</span>)
+    print (bin_N)
+
+solution(<span style="color:#ae81ff">100</span>) <span style="color:#75715e">#1100100</span>
+</code></pre></div><h2 id="find-binary-gap">find binary gap</h2>
+<p>Binary gap is the number of consecutive zeros between ones. We need to get rid of leading and trailing zeros.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(N):
+    <span style="color:#75715e"># int to binary</span>
+    bin_gap <span style="color:#f92672">=</span> format(N,<span style="color:#e6db74">&#39;b&#39;</span>)<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;0&#39;</span>)
+    print (bin_gap)
+
+solution(<span style="color:#ae81ff">100</span>) <span style="color:#75715e">#11001</span>
+</code></pre></div><p>Next step, I want to use <code>split</code> method, because we need maximum value of consecutive zeros.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(N):
+    <span style="color:#75715e"># int to binary</span>
+    bin_gap <span style="color:#f92672">=</span> format(N,<span style="color:#e6db74">&#39;b&#39;</span>)<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;0&#39;</span>)<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;1&#39;</span>)
+    print (bin_gap)
+
+solution(<span style="color:#ae81ff">100</span>) <span style="color:#75715e">#[&#39;&#39;, &#39;&#39;, &#39;00&#39;, &#39;&#39;]</span>
+</code></pre></div><p>Finally, we can make an output of binary gap using by <code>max</code> and <code>len</code> method.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(N):
+    <span style="color:#75715e"># int to binary</span>
+    bin_gap <span style="color:#f92672">=</span> len(max(format(N,<span style="color:#e6db74">&#39;b&#39;</span>)<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;0&#39;</span>)<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;1&#39;</span>)))
+    print (bin_gap)
+
+solution(<span style="color:#ae81ff">100</span>) <span style="color:#75715e">#2</span>
+</code></pre></div><h3 id="reference">Reference</h3>
+<p><a href="https://app.codility.com/programmers/lessons/1-iterations/binary_gap/">https://app.codility.com/programmers/lessons/1-iterations/binary_gap/</a></p>
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/python/"
+              >python</a
+            >&nbsp;
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/binary/"
+              >binary</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+
+    
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="https://twitter.com/SehwanDev" name="Twitter">
+        <em class="fab fa-twitter"></em>
+      </a>
+    
+       &nbsp;&ndash;&nbsp;
+      <a href="https://github.com/nhistory" name="GitHub">
+        <em class="fab fa-github"></em>
+      </a>
+    
+       &nbsp;&ndash;&nbsp;
+      <a href="https://www.instagram.com/sehwaann/" name="Instagram">
+        <em class="fab fa-instagram"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://nhistory.github.io/DevBlog/about">SeHwan Dev</a>
+      &nbsp;&copy;
+      2021
+      
+        &nbsp;/&nbsp;
+        <a href="https://nhistory.github.io/DevBlog/">SeHwan Dev Blog</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
