@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+<title>CyclicRotation</title>
+
+
+  
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://nhistory.github.io/DevBlog/index.xml"
+  title="SeHwan Dev Blog"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CyclicRotation"/>
+<meta name="twitter:description" content="Binary gap by python"/>
+
+
+
+<link rel="stylesheet" href="https://nhistory.github.io/DevBlog/fontawesome/css/all.min.css" />
+
+<link
+  id="dark-mode-theme"
+  rel="stylesheet"
+  href="https://nhistory.github.io/DevBlog/css/dark.css"
+/>
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+<script src="https://nhistory.github.io/DevBlog/js/main.bundle.js"></script>
+<script src="https://nhistory.github.io/DevBlog/js/instantpage.min.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.84.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://nhistory.github.io/DevBlog/" class="nav-logo">
+        <img
+          src="https://nhistory.github.io/DevBlog/images/icon.png"
+          width="50"
+          height="50"
+          alt="Logo"
+        />
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/DevBlog/about/" id="About"
+              ><em class="fas fa-user fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/DevBlog/tags/" id="Tags"
+              ><em class="fas fa-tag fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/DevBlog/search/" id="Search"
+              ><em class="fas fa-search fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>
+              CyclicRotation
+            </h1>
+          
+          
+            <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Oct 3, 2021
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://nhistory.github.io/DevBlog/categories/coding-test/"
+        >coding test</a
+      >&nbsp;
+    
+      <a
+        href="https://nhistory.github.io/DevBlog/categories/python/"
+        >python</a
+      >&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>An array &lsquo;A&rsquo; consisting of &lsquo;N&rsquo; integers is given. Rotation of the array means that each element is shifted right by one index, and the last element of the array is moved to the first place. For example, the rotation of array A = [3, 8, 9, 7, 6] is [6, 3, 8, 9, 7] (elements are shifted right by one index and 6 is moved to the first place).</p>
+<p><a href="https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/">CyclicRotation coding task - Learn to Code - Codility</a></p>
+<h2 id="solution">solution</h2>
+<p>The goal is to rotate array A K times; that is, each element of A will be shifted to the right K times.</p>
+<p>So we need to make a function that has two arguments like this. <code>def solution(A,K)</code></p>
+<p>First of all, we need a new array that already shifted each element, and after that repeats this process. There is a common way to repeat some method, it is <code>for</code> loop.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(A , K):
+     <span style="color:#75715e"># define A as an old version array</span>
+		 old <span style="color:#f92672">=</span> A
+		 <span style="color:#75715e"># make a new array has a same length</span>
+     new <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span>len(A)
+		 <span style="color:#75715e"># for loop iterated &#39;K&#39; times</span>
+     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(K):
+</code></pre></div><p>Inside of <code>for</code> literation, move the last element of the old version array to the first element of the new one. And the rest of the elements is saved into the new array index 1. After all &lsquo;new&rsquo; array should be changed into the &lsquo;old&rsquo; version array for the next iteration.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(A , K):
+     <span style="color:#75715e"># define A as an old version array</span>
+		 old <span style="color:#f92672">=</span> A
+		 <span style="color:#75715e"># make a new array has a same length</span>
+     new <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span>len(A)
+		 <span style="color:#75715e"># for loop iterated &#39;K&#39; times</span>
+     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(K):
+					<span style="color:#75715e"># shift the last element to the first place.</span>
+				  new[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> old[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+					<span style="color:#75715e"># rest of elements moved after index 1.</span>
+					new[<span style="color:#ae81ff">1</span>:] <span style="color:#f92672">=</span> old[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+					<span style="color:#75715e"># copy new array into old array</span>
+					old <span style="color:#f92672">=</span> new<span style="color:#f92672">.</span>copy()
+</code></pre></div><p>If we do not use <code>copy()</code>, output of function would be changed. Let me check this.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(A , K):
+     old <span style="color:#f92672">=</span> A
+     new <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span>len(A)
+     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(K):
+         new[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">=</span>old[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+         print(new[<span style="color:#ae81ff">0</span>])
+         print(new, new[<span style="color:#ae81ff">1</span>:])
+         new[<span style="color:#ae81ff">1</span>:] <span style="color:#f92672">=</span> old[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+         print(new[<span style="color:#ae81ff">1</span>:])
+         old <span style="color:#f92672">=</span> new<span style="color:#f92672">.</span>copy()
+         print(old)
+     <span style="color:#66d9ef">return</span> new
+
+print(solution([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>], <span style="color:#ae81ff">2</span>))
+</code></pre></div><p>To check the meaning of <code>copy()</code>, put in the <code>print()</code> each steps.</p>
+<ul>
+<li>without copy()</li>
+</ul>
+<p><img src="https://nhistory.github.io/DevBlog/images/cyclicRotation1.png" alt="cyclicRotation1.png"></p>
+<ul>
+<li>with copt()</li>
+</ul>
+<p><img src="https://nhistory.github.io/DevBlog/images/cyclicRotation2.png" alt="cyclicRotation2.png"></p>
+<p>This is an <a href="https://nhistory.github.io/DevBlog/2021/09/20/immutability-and-redux/">immutability</a> issue. If we use not copy(), an <code>old</code> array will be the same as the new array when got an [-1] index element. So we need to keep immutability between the old and new arrays after doing the first iteration.</p>
+<h3 id="reference">Reference</h3>
+<p><a href="https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/">https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/</a></p>
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/python/"
+              >python</a
+            >&nbsp;
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/array/"
+              >array</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+
+    
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="https://twitter.com/SehwanDev" name="Twitter">
+        <em class="fab fa-twitter"></em>
+      </a>
+    
+       &nbsp;&ndash;&nbsp;
+      <a href="https://github.com/nhistory" name="GitHub">
+        <em class="fab fa-github"></em>
+      </a>
+    
+       &nbsp;&ndash;&nbsp;
+      <a href="https://www.instagram.com/sehwaann/" name="Instagram">
+        <em class="fab fa-instagram"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://nhistory.github.io/DevBlog/about">SeHwan Dev</a>
+      &nbsp;&copy;
+      2021
+      
+        &nbsp;/&nbsp;
+        <a href="https://nhistory.github.io/DevBlog/">SeHwan Dev Blog</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
