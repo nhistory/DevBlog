@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+<title>Stack</title>
+
+
+  
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://nhistory.github.io/DevBlog/index.xml"
+  title="SeHwan Dev Blog"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Stack"/>
+<meta name="twitter:description" content="Cracking the Coding Interview"/>
+
+
+
+<link rel="stylesheet" href="https://nhistory.github.io/DevBlog/fontawesome/css/all.min.css" />
+
+<link
+  id="dark-mode-theme"
+  rel="stylesheet"
+  href="https://nhistory.github.io/DevBlog/css/dark.css"
+/>
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+<script src="https://nhistory.github.io/DevBlog/js/main.bundle.js"></script>
+<script src="https://nhistory.github.io/DevBlog/js/instantpage.min.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.84.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://nhistory.github.io/DevBlog/" class="nav-logo">
+        <img
+          src="https://nhistory.github.io/DevBlog/images/icon.png"
+          width="50"
+          height="50"
+          alt="Logo"
+        />
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/DevBlog/about/" id="About"
+              ><em class="fas fa-user fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/DevBlog/tags/" id="Tags"
+              ><em class="fas fa-tag fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/DevBlog/search/" id="Search"
+              ><em class="fas fa-search fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>
+              Stack
+            </h1>
+          
+          
+            <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Nov 26, 2021
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://nhistory.github.io/DevBlog/categories/coding-test/"
+        >coding test</a
+      >&nbsp;
+    
+      <a
+        href="https://nhistory.github.io/DevBlog/categories/python/"
+        >python</a
+      >&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>스택은 가장 나중에 들어온 자료가 가장 먼저 처리되는 LIFO(Last-In-First-Out) 자료구조이다. 구멍이 하나밖에 없는 병이라고 생각하면 이해하기 쉽다.</p>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack01.png" alt="Stack01"></p>
+<p>스택은 다음 4가지 operation을 지원해야 한다.</p>
+<ul>
+<li>pop() : 스택의 가장 위에 있는 데이터를 제거. (가장 최근에 추가된 데이터)</li>
+<li>push(item) : 데이터를 스택의 가장 위에 추가</li>
+<li>peek() : 스택의 가장 위에 있는 데이터를 리턴.</li>
+<li>isEmpty() : 스택이 비어 있을 때 True를 리턴.</li>
+</ul>
+<h2 id="31-describe-how-you-could-use-a-single-array-to-implement-three-stacks">3.1 Describe how you could use a single array to implement three stacks.</h2>
+<h3 id="approach-1-fixed-division">Approach 1: Fixed Division</h3>
+<p>리스트를 3등분한 다음 각각을 스택으로 활용하는 방법</p>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack02.png" alt="Stack02"></p>
+<p>스택 사이즈를 동일하게 구성하고 각각의 스텍에 데이터를 넣는 방식이다.</p>
+<p>간단하게 구현할 수 있지만, 스텍마다 입력한 데이터의 갯수가 다른 경우 비효율적으로 공간을 차지하게 된다.</p>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack03.png" alt="Stack03"></p>
+<p>예를 들어 두번째 스텍은 데이터가 5개이고 나머지 스텍은 2개, 3개인 경우 어레이 안에 비어있는 공간이 생기게 된다. 이후 두번째 스텍에 데이터가 하나 더 들어오게 되면 어레이 안에 이미 빈 공간이 있음에도 전체 어레이를 늘려줘야 하는 비효율이 발생한다.</p>
+<ul>
+<li>
+<p>isEmpty(), isFull()</p>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack04.png" alt="Stack04"></p>
+</li>
+<li>
+<p>push</p>
+</li>
+</ul>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack05.png" alt="Stack05"></p>
+<ul>
+<li>push(10,0)</li>
+</ul>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack06.png" alt="Stack06"></p>
+<ul>
+<li>push(20,0)</li>
+</ul>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack07.png" alt="Stack07"></p>
+<ul>
+<li>push(11,1)</li>
+</ul>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack08.png" alt="Stack08"></p>
+<h3 id="approach-2-flexible-divisions">Approach 2: Flexible Divisions</h3>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack09.png" alt="Stack09"></p>
+<ul>
+<li>push()</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">push</span>(self, item, stackNumber):
+		<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>isFull():
+			print(<span style="color:#e6db74">&#34;Stack Overflow&#34;</span>)
+			<span style="color:#66d9ef">return</span>
+
+		insert_at <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>free
+		self<span style="color:#f92672">.</span>free <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>next[self<span style="color:#f92672">.</span>free]
+		self<span style="color:#f92672">.</span>arr[insert_at] <span style="color:#f92672">=</span> item
+		self<span style="color:#f92672">.</span>next[insert_at] <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>top[stackNumber]
+		self<span style="color:#f92672">.</span>top[stackNumber] <span style="color:#f92672">=</span> insert_at
+
+<span style="color:#75715e"># Push some items onto stack number 2.</span>
+kstacks<span style="color:#f92672">.</span>push(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">2</span>)
+kstacks<span style="color:#f92672">.</span>push(<span style="color:#ae81ff">45</span>, <span style="color:#ae81ff">2</span>)
+
+<span style="color:#75715e"># Push some items onto stack number 1.</span>
+kstacks<span style="color:#f92672">.</span>push(<span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">1</span>)
+kstacks<span style="color:#f92672">.</span>push(<span style="color:#ae81ff">49</span>, <span style="color:#ae81ff">1</span>)
+kstacks<span style="color:#f92672">.</span>push(<span style="color:#ae81ff">39</span>, <span style="color:#ae81ff">1</span>)
+
+<span style="color:#75715e"># Push some items onto stack number 0.</span>
+kstacks<span style="color:#f92672">.</span>push(<span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">0</span>)
+kstacks<span style="color:#f92672">.</span>push(<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">0</span>)
+kstacks<span style="color:#f92672">.</span>push(<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">0</span>)
+</code></pre></div><p><img src="https://nhistory.github.io/DevBlog/images/Stack10.png" alt="Stack10"></p>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack11.png" alt="Stack11"></p>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack12.png" alt="Stack12"></p>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack13.png" alt="Stack13"></p>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack14.png" alt="Stack14"></p>
+<h3 id="32-how-would-you-design-a-stack-which-in-addition-to-push-and-pop-has-a-function-min-which-returns-the-minimum-element-push-pop-and-min-should-all-operate-in-01-time">3.2 How would you design a stack which, in addition to push and pop, has a function min which returns the minimum element? Push, pop and min should all operate in 0(1) time.</h3>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack15.png" alt="Stack15"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Minstack</span>:
+  <span style="color:#66d9ef">def</span> __init__(self):
+    self<span style="color:#f92672">.</span>stack <span style="color:#f92672">=</span> []
+    self<span style="color:#f92672">.</span>minStack <span style="color:#f92672">=</span> []
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">push</span>(self, val: int) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+    self<span style="color:#f92672">.</span>stack<span style="color:#f92672">.</span>append(val)
+    val <span style="color:#f92672">=</span> min(val, self<span style="color:#f92672">.</span>minStack[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>minStack <span style="color:#66d9ef">else</span> val)
+    self<span style="color:#f92672">.</span>minStack<span style="color:#f92672">.</span>append(val)
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">pop</span>(self) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">None</span>:
+    self<span style="color:#f92672">.</span>stack<span style="color:#f92672">.</span>pop()
+    self<span style="color:#f92672">.</span>minStack<span style="color:#f92672">.</span>pop()
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">top</span>(self) <span style="color:#f92672">-&gt;</span> int:
+    <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>stack[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getMin</span>(self) <span style="color:#f92672">-&gt;</span> int:
+    <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>minStack[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</code></pre></div><h3 id="33-imagine-a-literal-stack-of-plates-if-the-stack-gets-too-high-it-might-topple-therefore-in-real-life-we-would-likely-start-a-new-stack-when-the-previous-stack-exceeds-some-threshold-implement-a-data-structure-setofstacks-that-mimics-this-setofstacks-should-be-composed-of-several-stacks-and-should-create-a-new-stack-once-the-previous-one-exceeds-capacity-setofstacks-push-and-setofstacks-pop-should-behave-identically-to-a-single-stack-that-is-pop--should-return-the-same-values-as-it-would-if-there-were-just-a-single-stack">3.3 Imagine a (literal) stack of plates. If the stack gets too high, it might topple. Therefore, in real life, we would likely start a new stack when the previous stack exceeds some threshold. Implement a data structure SetOfStacks that mimics this. SetOfStacks should be composed of several stacks and should create a new stack once the previous one exceeds capacity. SetOfStacks. push() and SetOfStacks. pop() should behave identically to a single stack (that is, pop () should return the same values as it would if there were just a single stack).</h3>
+<p><a href="https://colorfulcodesblog.wordpress.com/2018/01/23/stack-of-plates-cracking-the-code-python/comment-page-1/">Stack of Plates ~ Cracking the Code (Python)</a></p>
+<p><a href="https://quastor.org/cracking-the-coding-interview/stacks-and-queues/stack-of-plates">Stack of Plates</a></p>
+<ul>
+<li>capacity = 3, item이 8개인 경우</li>
+</ul>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack16.png" alt="Stack16"></p>
+<p>stacks = [[1,2,3],[4,5,6],[7,8]]</p>
+<p>pop()</p>
+<p>popAt(1)</p>
+<p>popAt(0)</p>
+<p>push(10)</p>
+<p><img src="https://nhistory.github.io/DevBlog/images/Stack17.png" alt="Stack17"></p>
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/python/"
+              >python</a
+            >&nbsp;
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/stack/"
+              >stack</a
+            >&nbsp;
+          
+            <a
+              href="https://nhistory.github.io/DevBlog/tags/algorithme/"
+              >algorithme</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+
+    
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="https://twitter.com/SehwanDev" name="Twitter">
+        <em class="fab fa-twitter"></em>
+      </a>
+    
+       &nbsp;&ndash;&nbsp;
+      <a href="https://github.com/nhistory" name="GitHub">
+        <em class="fab fa-github"></em>
+      </a>
+    
+       &nbsp;&ndash;&nbsp;
+      <a href="https://www.instagram.com/sehwaann/" name="Instagram">
+        <em class="fab fa-instagram"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://nhistory.github.io/DevBlog/about">SeHwan Dev</a>
+      &nbsp;&copy;
+      2021
+      
+        &nbsp;/&nbsp;
+        <a href="https://nhistory.github.io/DevBlog/">SeHwan Dev Blog</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -14,6 +14,14 @@
 		<atom:link href="/DevBlog/categories/javascript/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Stack</title>
+			<link>https://nhistory.github.io/DevBlog/2021/11/26/stack/</link>
+			<pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+			<guid>https://nhistory.github.io/DevBlog/2021/11/26/stack/</guid>
+			<description>&lt;p&gt;스택은 가장 나중에 들어온 자료가 가장 먼저 처리되는 LIFO(Last-In-First-Out) 자료구조이다. 구멍이 하나밖에 없는 병이라고 생각하면 이해하기 쉽다.&lt;/p&gt;</description>
+		</item>
+      	
+		<item>
 			<title>CyclicRotation</title>
 			<link>https://nhistory.github.io/DevBlog/2021/10/03/cyclicrotation/</link>
 			<pubDate>Sun, 03 Oct 2021 00:00:00 +0000</pubDate>

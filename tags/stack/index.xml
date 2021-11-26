@@ -1,0 +1,93 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>stack on SeHwan Dev Blog</title>
+		<link>https://nhistory.github.io/DevBlog/tags/stack/</link>
+		<description>Recent content in stack </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en-us</language>
+		
+		<managingEditor>Page(/tags/stack) (SeHwan Dev)</managingEditor>
+    	
+  		<lastBuildDate>Fri, 26 Nov 2021 00:00:00 +0000</lastBuildDate>
+		
+		<atom:link href="/DevBlog/tags/stack/" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Stack</title>
+			<link>https://nhistory.github.io/DevBlog/2021/11/26/stack/</link>
+			<pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+			<guid>https://nhistory.github.io/DevBlog/2021/11/26/stack/</guid>
+			<description>&lt;p&gt;스택은 가장 나중에 들어온 자료가 가장 먼저 처리되는 LIFO(Last-In-First-Out) 자료구조이다. 구멍이 하나밖에 없는 병이라고 생각하면 이해하기 쉽다.&lt;/p&gt;</description>
+		</item>
+      	
+		<item>
+			<title>CyclicRotation</title>
+			<link>https://nhistory.github.io/DevBlog/2021/10/03/cyclicrotation/</link>
+			<pubDate>Sun, 03 Oct 2021 00:00:00 +0000</pubDate>
+			<guid>https://nhistory.github.io/DevBlog/2021/10/03/cyclicrotation/</guid>
+			<description>&lt;p&gt;An array &amp;lsquo;A&amp;rsquo; consisting of &amp;lsquo;N&amp;rsquo; integers is given. Rotation of the array means that each element is shifted right by one index, and the last element of the array is moved to the first place. For example, the rotation of array A = [3, 8, 9, 7, 6] is [6, 3, 8, 9, 7] (elements are shifted right by one index and 6 is moved to the first place).&lt;/p&gt;</description>
+		</item>
+      	
+		<item>
+			<title>Binary Gap</title>
+			<link>https://nhistory.github.io/DevBlog/2021/09/27/binary-gap/</link>
+			<pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://nhistory.github.io/DevBlog/2021/09/27/binary-gap/</guid>
+			<description>&lt;p&gt;A binary gap within a positive integer N is any maximal sequence of consecutive zeros that is surrounded by ones at both ends in the binary representation of N.&lt;/p&gt;
+&lt;p&gt;In order to make code of finding out the binary gap of integer &amp;lsquo;N&amp;rsquo;, first of all we need to exchange from integer N to binary representation.&lt;/p&gt;</description>
+		</item>
+      	
+		<item>
+			<title>Immutability and Redux</title>
+			<link>https://nhistory.github.io/DevBlog/2021/09/20/immutability-and-redux/</link>
+			<pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://nhistory.github.io/DevBlog/2021/09/20/immutability-and-redux/</guid>
+			<description>&lt;h2 id=&#34;immutable&#34;&gt;Immutable??&lt;/h2&gt;
+&lt;p&gt;An immutable object is one whose content cannot be changed. An object can be immutable for various reasons, for example:&lt;/p&gt;</description>
+		</item>
+      	
+		<item>
+			<title>Ajax and Fetch API</title>
+			<link>https://nhistory.github.io/DevBlog/2021/09/07/ajax-and-fetch-api/</link>
+			<pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://nhistory.github.io/DevBlog/2021/09/07/ajax-and-fetch-api/</guid>
+			<description>&lt;h2 id=&#34;what-is-ajax&#34;&gt;What is Ajax?&lt;/h2&gt;
+&lt;p&gt;AJAX stands for Asynchronous JavaScript And XML. In a nutshell, it is the use of the XMLHttpRequest object to communicate with servers. It can send and receive information in various formats, including JSON, XML, HTML, and text files. AJAX’s most appealing characteristic is its &amp;ldquo;asynchronous&amp;rdquo; nature, which means it can communicate with the server, exchange data, and update the page without having to refresh the page.&lt;/p&gt;</description>
+		</item>
+      	
+		<item>
+			<title>Docker Image &amp; docker-compose</title>
+			<link>https://nhistory.github.io/DevBlog/2021/07/18/docker-image-docker-compose/</link>
+			<pubDate>Sun, 18 Jul 2021 00:00:00 +0000</pubDate>
+			<guid>https://nhistory.github.io/DevBlog/2021/07/18/docker-image-docker-compose/</guid>
+			<description>&lt;p&gt;그럼 이제 구체적으로 실제 Docker를 사용하는 방법에 대해 정리해보도록 하자.&lt;/p&gt;</description>
+		</item>
+      	
+		<item>
+			<title>Remote containers in VS code</title>
+			<link>https://nhistory.github.io/DevBlog/2021/07/10/remote-containers-in-vs-code/</link>
+			<pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
+			<guid>https://nhistory.github.io/DevBlog/2021/07/10/remote-containers-in-vs-code/</guid>
+			<description>&lt;p&gt;The &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers&#34;&gt;Remote containers extention&lt;/a&gt; can use a Docker container as a full-featured development environment. If you want to make a remote container setup in visual studio code, there are several mandatory settings.&lt;/p&gt;</description>
+		</item>
+      	
+		<item>
+			<title>Element.classList</title>
+			<link>https://nhistory.github.io/DevBlog/2021/06/28/element.classlist/</link>
+			<pubDate>Mon, 28 Jun 2021 00:00:00 +0000</pubDate>
+			<guid>https://nhistory.github.io/DevBlog/2021/06/28/element.classlist/</guid>
+			<description>&lt;p&gt;The Element.classList is a read-only property that returns a live DOMTokenList collection of the class attributes of the element. This can then be used to manipulate the class list.&lt;/p&gt;
+&lt;p&gt;Using classList is a convenient alternative to accessing an element&amp;rsquo;s list of classes as a space-delimited string via element.className.&lt;/p&gt;</description>
+		</item>
+      	
+		<item>
+			<title>getElementById() vs querySelector()</title>
+			<link>https://nhistory.github.io/DevBlog/2021/06/26/getelementbyid-vs-queryselector/</link>
+			<pubDate>Sat, 26 Jun 2021 00:00:00 +0000</pubDate>
+			<guid>https://nhistory.github.io/DevBlog/2021/06/26/getelementbyid-vs-queryselector/</guid>
+			<description>&lt;p&gt;When calling a specific element of an HTML file with Javascript, two methods are often used among document properties.&lt;/p&gt;</description>
+		</item>
+      	
+	</channel>
+</rss>
