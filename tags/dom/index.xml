@@ -14,6 +14,20 @@
 		<atom:link href="/DevBlog/tags/dom/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Diagonal Difference</title>
+			<link>https://nhistory.github.io/DevBlog/2021/12/25/diagonal-difference/</link>
+			<pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+			<guid>https://nhistory.github.io/DevBlog/2021/12/25/diagonal-difference/</guid>
+			<description>&lt;p&gt;Given a square matrix, calculate the absolute difference between the sums of its diagonals.&lt;/p&gt;
+&lt;p&gt;For example, the square matrix  is shown below:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1 2 3
+4 5 6
+9 8 9
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The left-to-right diagonal = &lt;code&gt;1+5+9=15&lt;/code&gt;. The right to left diagonal = &lt;code&gt;3+5+9=17&lt;/code&gt; . Their absolute difference is &lt;code&gt;|15-17|=2&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For this problem, we need to use ‘2D list’ in Java.&lt;/p&gt;</description>
+		</item>
+      	
+		<item>
 			<title>Stack</title>
 			<link>https://nhistory.github.io/DevBlog/2021/11/26/stack/</link>
 			<pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>

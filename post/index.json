@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://nhistory.github.io/DevBlog/2021/12/25/diagonal-difference/",
+                "title": "Diagonal Difference",
+                "section": "post",
+                "date" : "2021.12.25",
+                "body": "Given a square matrix, calculate the absolute difference between the sums of its diagonals.\nFor example, the square matrix is shown below:\n1 2 3 4 5 6 9 8 9 The left-to-right diagonal = 1+5+9=15. The right to left diagonal = 3+5+9=17 . Their absolute difference is |15-17|=2.\nFor this problem, we need to use ‘2D list’ in Java.\n Create 2D ArrayList  ArrayList\u0026lt;ArrayList\u0026lt;Integer\u0026gt;\u0026gt; arr = new ArrayList\u0026lt;ArrayList\u0026lt;Integer\u0026gt;\u0026gt;(); After initialize 2D list, we should store memory by default at each nth rows.\narr.add(new ArrayList\u0026lt;Integer\u0026gt;());  Modify the default value : use get(), and add().  arr.get(0).add(0,1); arr.get(0).add(1,2); arr.get(0).add(2,3); //[[1,2,3]] import java.util.ArrayList; /** * main */ public class main { public static void main(String[] args) { // Create 2D ArrayList  ArrayList\u0026lt;ArrayList\u0026lt;Integer\u0026gt;\u0026gt; arr = new ArrayList\u0026lt;ArrayList\u0026lt;Integer\u0026gt;\u0026gt;(); // Allocating space to 0th row with the help of \u0026#39;new\u0026#39; keyword  // At 0th row, 0 gets stored in memory by default  arr.add(new ArrayList\u0026lt;Integer\u0026gt;()); // At 0th row, modifing the default value  arr.get(0).add(0,1); arr.get(0).add(1,2); arr.get(0).add(2,3); arr.add(new ArrayList\u0026lt;Integer\u0026gt;()); arr.get(1).add(0,4); arr.get(1).add(1,5); arr.get(1).add(2,6); arr.add(new ArrayList\u0026lt;Integer\u0026gt;()); arr.get(2).add(0,9); arr.get(2).add(1,8); arr.get(2).add(2,9); // print 2D list arr  System.out.println(arr); // // print sepecific index of 2D list  // System.out.println(arr.get(0).get(0));  // initialize diagonals  int sum1 = 0; int sum2 = 0; for(int i = 0; i\u0026lt;arr.size();i++){ for(int j = 0; j\u0026lt;arr.get(i).size();j++){ if (i==j){ sum1 = sum1 + arr.get(i).get(j); } } } for(int i = 0; i\u0026lt;arr.size();i++){ for(int j = 0; j\u0026lt;arr.get(i).size();j++){ if (i+j==arr.size()-1){ sum2 = sum2 + arr.get(i).get(j); } } } // Get a absolute difference between sums  int result = Math.abs(sum1-sum2); System.out.println(sum1); System.out.println(sum2); System.out.println(result); } } References\nDiagonal Difference | HackerRank\n2D Array List in Java\n"
+            }
+        
+    ,
+        
+            {
                 "ref": "https://nhistory.github.io/DevBlog/2021/11/26/stack/",
                 "title": "Stack",
                 "section": "post",
