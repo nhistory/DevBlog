@@ -14,10 +14,10 @@
 		<atom:link href="/DevBlog/categories/vs-code/" rel="self" type="application/rss+xml" />
 		
 		<item>
-			<title>‘__dirname’ issue with Node.js</title>
-			<link>https://nhistory.github.io/DevBlog/2022/02/24/__dirname-issue-with-node.js/</link>
+			<title>dirname issue with Node.js</title>
+			<link>https://nhistory.github.io/DevBlog/2022/02/24/dirname-issue-with-node.js/</link>
 			<pubDate>Thu, 24 Feb 2022 00:00:00 +0000</pubDate>
-			<guid>https://nhistory.github.io/DevBlog/2022/02/24/__dirname-issue-with-node.js/</guid>
+			<guid>https://nhistory.github.io/DevBlog/2022/02/24/dirname-issue-with-node.js/</guid>
 			<description>&lt;h2 id=&#34;what-is-__dirname&#34;&gt;What is ‘__dirname’?&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The **dirname in a node script returns the path of the folder where the current JavaScript file resides. **filename and __dirname are used to get the filename and directory name of the currently executing file.&lt;/p&gt;
