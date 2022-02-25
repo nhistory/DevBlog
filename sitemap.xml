@@ -4,13 +4,40 @@
   <url>
     <loc>https://nhistory.github.io/DevBlog/about/</loc>
   </url><url>
+    <loc>https://nhistory.github.io/DevBlog/categories/backend/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/categories/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/tags/express.js/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/tags/javascript/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/categories/javascript/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/tags/node.js/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/post/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/tags/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://nhistory.github.io/DevBlog/2022/02/24/__dirname-issue-with-node.js/</loc>
+    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://nhistory.github.io/DevBlog/tags/2d-list/</loc>
     <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nhistory.github.io/DevBlog/tags/algorithme/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nhistory.github.io/DevBlog/categories/</loc>
     <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nhistory.github.io/DevBlog/categories/coding-test/</loc>
@@ -23,15 +50,6 @@
     <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nhistory.github.io/DevBlog/categories/java/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nhistory.github.io/DevBlog/post/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nhistory.github.io/DevBlog/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nhistory.github.io/DevBlog/tags/</loc>
     <lastmod>2021-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nhistory.github.io/DevBlog/tags/python/</loc>
@@ -62,9 +80,6 @@
     <lastmod>2021-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nhistory.github.io/DevBlog/2021/09/20/immutability-and-redux/</loc>
-    <lastmod>2021-09-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nhistory.github.io/DevBlog/categories/javascript/</loc>
     <lastmod>2021-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nhistory.github.io/DevBlog/tags/redux/</loc>
@@ -125,9 +140,6 @@
     <lastmod>2021-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nhistory.github.io/DevBlog/tags/html/</loc>
-    <lastmod>2021-06-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nhistory.github.io/DevBlog/tags/javascript/</loc>
     <lastmod>2021-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://nhistory.github.io/DevBlog/2021/06/26/getelementbyid-vs-queryselector/</loc>

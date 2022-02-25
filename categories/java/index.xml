@@ -14,13 +14,25 @@
 		<atom:link href="/DevBlog/categories/java/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>‘__dirname’ issue with Node.js</title>
+			<link>https://nhistory.github.io/DevBlog/2022/02/24/__dirname-issue-with-node.js/</link>
+			<pubDate>Thu, 24 Feb 2022 00:00:00 +0000</pubDate>
+			<guid>https://nhistory.github.io/DevBlog/2022/02/24/__dirname-issue-with-node.js/</guid>
+			<description>&lt;h2 id=&#34;what-is-__dirname&#34;&gt;What is ‘__dirname’?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The **dirname in a node script returns the path of the folder where the current JavaScript file resides. **filename and __dirname are used to get the filename and directory name of the currently executing file.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When I use express.js as a backend, I faced some issues with ‘__dirname’.&lt;/p&gt;</description>
+		</item>
+      	
+		<item>
 			<title>Diagonal Difference</title>
 			<link>https://nhistory.github.io/DevBlog/2021/12/25/diagonal-difference/</link>
 			<pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
 			<guid>https://nhistory.github.io/DevBlog/2021/12/25/diagonal-difference/</guid>
 			<description>&lt;p&gt;Given a square matrix, calculate the absolute difference between the sums of its diagonals.&lt;/p&gt;
 &lt;p&gt;For example, the square matrix  is shown below:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1 2 3
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1 2 3
 4 5 6
 9 8 9
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The left-to-right diagonal = &lt;code&gt;1+5+9=15&lt;/code&gt;. The right to left diagonal = &lt;code&gt;3+5+9=17&lt;/code&gt; . Their absolute difference is &lt;code&gt;|15-17|=2&lt;/code&gt;.&lt;/p&gt;
@@ -93,14 +105,6 @@
 			<guid>https://nhistory.github.io/DevBlog/2021/06/28/element.classlist/</guid>
 			<description>&lt;p&gt;The Element.classList is a read-only property that returns a live DOMTokenList collection of the class attributes of the element. This can then be used to manipulate the class list.&lt;/p&gt;
 &lt;p&gt;Using classList is a convenient alternative to accessing an element&amp;rsquo;s list of classes as a space-delimited string via element.className.&lt;/p&gt;</description>
-		</item>
-      	
-		<item>
-			<title>getElementById() vs querySelector()</title>
-			<link>https://nhistory.github.io/DevBlog/2021/06/26/getelementbyid-vs-queryselector/</link>
-			<pubDate>Sat, 26 Jun 2021 00:00:00 +0000</pubDate>
-			<guid>https://nhistory.github.io/DevBlog/2021/06/26/getelementbyid-vs-queryselector/</guid>
-			<description>&lt;p&gt;When calling a specific element of an HTML file with Javascript, two methods are often used among document properties.&lt;/p&gt;</description>
 		</item>
       	
 	</channel>

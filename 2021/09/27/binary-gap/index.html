@@ -44,7 +44,7 @@
 
 <script src="https://nhistory.github.io/DevBlog/js/main.bundle.js"></script>
 <script src="https://nhistory.github.io/DevBlog/js/instantpage.min.js" type="module" defer></script>
-<meta name="generator" content="Hugo 0.84.1" />
+<meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -140,7 +140,7 @@
 <p>In order to make code of finding out the binary gap of integer &lsquo;N&rsquo;, first of all we need to exchange from integer N to binary representation.</p>
 <h2 id="int-to-binary">int to binary</h2>
 <p>There are several methods to change int into binary by python. <code>bin</code> method is the most simple way, but we need to remove <code>0b</code> from result. So I select to use <code>format(N, 'b)</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(N):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(N):
     <span style="color:#75715e"># int to binary</span>
     bin_N <span style="color:#f92672">=</span> format(N,<span style="color:#e6db74">&#39;b&#39;</span>)
     print (bin_N)
@@ -148,21 +148,21 @@
 solution(<span style="color:#ae81ff">100</span>) <span style="color:#75715e">#1100100</span>
 </code></pre></div><h2 id="find-binary-gap">find binary gap</h2>
 <p>Binary gap is the number of consecutive zeros between ones. We need to get rid of leading and trailing zeros.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(N):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(N):
     <span style="color:#75715e"># int to binary</span>
     bin_gap <span style="color:#f92672">=</span> format(N,<span style="color:#e6db74">&#39;b&#39;</span>)<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;0&#39;</span>)
     print (bin_gap)
 
 solution(<span style="color:#ae81ff">100</span>) <span style="color:#75715e">#11001</span>
 </code></pre></div><p>Next step, I want to use <code>split</code> method, because we need maximum value of consecutive zeros.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(N):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(N):
     <span style="color:#75715e"># int to binary</span>
     bin_gap <span style="color:#f92672">=</span> format(N,<span style="color:#e6db74">&#39;b&#39;</span>)<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;0&#39;</span>)<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;1&#39;</span>)
     print (bin_gap)
 
 solution(<span style="color:#ae81ff">100</span>) <span style="color:#75715e">#[&#39;&#39;, &#39;&#39;, &#39;00&#39;, &#39;&#39;]</span>
 </code></pre></div><p>Finally, we can make an output of binary gap using by <code>max</code> and <code>len</code> method.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(N):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(N):
     <span style="color:#75715e"># int to binary</span>
     bin_gap <span style="color:#f92672">=</span> len(max(format(N,<span style="color:#e6db74">&#39;b&#39;</span>)<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;0&#39;</span>)<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;1&#39;</span>)))
     print (bin_gap)
@@ -229,7 +229,7 @@ solution(<span style="color:#ae81ff">100</span>) <span style="color:#75715e">#2<
     <p class="credits copyright">
       <a href="https://nhistory.github.io/DevBlog/about">SeHwan Dev</a>
       &nbsp;&copy;
-      2021
+      2022
       
         &nbsp;/&nbsp;
         <a href="https://nhistory.github.io/DevBlog/">SeHwan Dev Blog</a>

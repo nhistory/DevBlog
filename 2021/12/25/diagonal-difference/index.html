@@ -44,7 +44,7 @@
 
 <script src="https://nhistory.github.io/DevBlog/js/main.bundle.js"></script>
 <script src="https://nhistory.github.io/DevBlog/js/instantpage.min.js" type="module" defer></script>
-<meta name="generator" content="Hugo 0.84.1" />
+<meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -138,7 +138,7 @@
       
   <p>Given a square matrix, calculate the absolute difference between the sums of its diagonals.</p>
 <p>For example, the square matrix  is shown below:</p>
-<pre><code>1 2 3
+<pre tabindex="0"><code>1 2 3
 4 5 6
 9 8 9
 </code></pre><p>The left-to-right diagonal = <code>1+5+9=15</code>. The right to left diagonal = <code>3+5+9=17</code> . Their absolute difference is <code>|15-17|=2</code>.</p>
@@ -146,18 +146,18 @@
 <ul>
 <li>Create 2D ArrayList</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ArrayList<span style="color:#f92672">&lt;</span>ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;&gt;</span> arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;&gt;();</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ArrayList<span style="color:#f92672">&lt;</span>ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;&gt;</span> arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;&gt;();</span>
 </code></pre></div><p>After initialize 2D list, we should store memory by default at each nth rows.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">arr<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;());</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">arr<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;());</span>
 </code></pre></div><ul>
 <li>Modify the default value : use get(), and add().</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">arr<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">).</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>0<span style="color:#f92672">,</span>1<span style="color:#f92672">);</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">arr<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">).</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>0<span style="color:#f92672">,</span>1<span style="color:#f92672">);</span>
 arr<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">).</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span>2<span style="color:#f92672">);</span>
 arr<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">).</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>2<span style="color:#f92672">,</span>3<span style="color:#f92672">);</span>
 
 <span style="color:#75715e">//[[1,2,3]]
-</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.ArrayList<span style="color:#f92672">;</span>
+</span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.ArrayList<span style="color:#f92672">;</span>
 
 <span style="color:#75715e">/**
 </span><span style="color:#75715e"> * main
@@ -286,7 +286,7 @@ arr<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><sp
     <p class="credits copyright">
       <a href="https://nhistory.github.io/DevBlog/about">SeHwan Dev</a>
       &nbsp;&copy;
-      2021
+      2022
       
         &nbsp;/&nbsp;
         <a href="https://nhistory.github.io/DevBlog/">SeHwan Dev Blog</a>

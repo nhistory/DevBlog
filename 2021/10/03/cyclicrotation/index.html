@@ -44,7 +44,7 @@
 
 <script src="https://nhistory.github.io/DevBlog/js/main.bundle.js"></script>
 <script src="https://nhistory.github.io/DevBlog/js/instantpage.min.js" type="module" defer></script>
-<meta name="generator" content="Hugo 0.84.1" />
+<meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -142,7 +142,7 @@
 <p>The goal is to rotate array A K times; that is, each element of A will be shifted to the right K times.</p>
 <p>So we need to make a function that has two arguments like this. <code>def solution(A,K)</code></p>
 <p>First of all, we need a new array that already shifted each element, and after that repeats this process. There is a common way to repeat some method, it is <code>for</code> loop.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(A , K):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(A , K):
      <span style="color:#75715e"># define A as an old version array</span>
 		 old <span style="color:#f92672">=</span> A
 		 <span style="color:#75715e"># make a new array has a same length</span>
@@ -150,7 +150,7 @@
 		 <span style="color:#75715e"># for loop iterated &#39;K&#39; times</span>
      <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(K):
 </code></pre></div><p>Inside of <code>for</code> literation, move the last element of the old version array to the first element of the new one. And the rest of the elements is saved into the new array index 1. After all &lsquo;new&rsquo; array should be changed into the &lsquo;old&rsquo; version array for the next iteration.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(A , K):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(A , K):
      <span style="color:#75715e"># define A as an old version array</span>
 		 old <span style="color:#f92672">=</span> A
 		 <span style="color:#75715e"># make a new array has a same length</span>
@@ -164,7 +164,7 @@
 					<span style="color:#75715e"># copy new array into old array</span>
 					old <span style="color:#f92672">=</span> new<span style="color:#f92672">.</span>copy()
 </code></pre></div><p>If we do not use <code>copy()</code>, output of function would be changed. Let me check this.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(A , K):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solution</span>(A , K):
      old <span style="color:#f92672">=</span> A
      new <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span>len(A)
      <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(K):
@@ -249,7 +249,7 @@ print(solution([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff"
     <p class="credits copyright">
       <a href="https://nhistory.github.io/DevBlog/about">SeHwan Dev</a>
       &nbsp;&copy;
-      2021
+      2022
       
         &nbsp;/&nbsp;
         <a href="https://nhistory.github.io/DevBlog/">SeHwan Dev Blog</a>
